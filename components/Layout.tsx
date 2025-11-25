@@ -33,19 +33,35 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       link.setAttribute('href', href);
     };
 
+    const title = 'Lira Pintura — Reformas e Hidráulica em POA';
+    const description = 'Pintura de alto padrão, reformas completas e serviços hidráulicos 24h em Porto Alegre. Qualidade e confiança.';
+
     // SEO Setup
-    document.title = 'Lira Pintura — Reformas e Hidráulica em POA';
+    document.title = title;
 
     // Primary Meta Tags
-    setMeta('description', 'Especialistas em acabamento fino, construção a seco e impermeabilização. Atendimento 24h em Porto Alegre.', false);
+    setMeta('description', description, false);
     setMeta('theme-color', '#0c4a6e', false);
+    setMeta('author', 'Lira Pintura', false);
 
-    // Open Graph
+    // Open Graph / Facebook / WhatsApp
     setMeta('og:type', 'website', true);
     setMeta('og:url', SITE_URL, true);
-    setMeta('og:title', 'Lira Pintura — Excelência em Acabamentos', true);
-    setMeta('og:description', 'Transformamos seu ambiente com pintura de alto padrão e reformas especializadas.', true);
+    setMeta('og:title', title, true);
+    setMeta('og:description', description, true);
     setMeta('og:image', LOGO_URL, true);
+    setMeta('og:image:width', '800', true);
+    setMeta('og:image:height', '800', true);
+    setMeta('og:image:alt', 'Logo Lira Pintura', true);
+    setMeta('og:site_name', 'Lira Pintura', true);
+    setMeta('og:locale', 'pt_BR', true);
+
+    // Twitter
+    setMeta('twitter:card', 'summary', false); // 'summary' é melhor para logos quadrados, 'summary_large_image' para banners
+    setMeta('twitter:url', SITE_URL, false);
+    setMeta('twitter:title', title, false);
+    setMeta('twitter:description', description, false);
+    setMeta('twitter:image', LOGO_URL, false);
     
     // Links
     setLink('canonical', SITE_URL);
