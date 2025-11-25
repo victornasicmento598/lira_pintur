@@ -52,7 +52,8 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      const isScrolled = window.scrollY > 20;
+      setScrolled(isScrolled);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -107,10 +108,10 @@ export default function Home() {
 
       {/* Header */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled 
-            ? 'bg-gray-950/80 backdrop-blur-xl shadow-lg border-b border-white/5 py-3' 
-            : 'bg-transparent py-6'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${
+          scrolled || mobileMenuOpen
+            ? 'bg-gray-950/90 backdrop-blur-md shadow-xl border-b border-white/10 py-3' 
+            : 'bg-transparent py-5 border-b border-transparent shadow-none'
         }`}
       >
         <div className="container mx-auto px-6">
